@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Weather = props => (
   <div className="weather__info">
@@ -31,6 +31,14 @@ const Weather = props => (
         {' '}
         Conditions:
         <span className="weather__value"> {props.description} </span>
+        <img src={props.img} alt="description" />
+      </p>
+    )}
+    {props.windSpeed && (
+      <p className="weather__key">
+        {' '}
+        Wind Speed:
+        <span className="weather__value"> {props.windSpeed} </span>
       </p>
     )}
     {props.error && <p className="weather__error">{props.error}</p>}
